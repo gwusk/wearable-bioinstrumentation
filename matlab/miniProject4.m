@@ -3,7 +3,7 @@ clc
 close all
 
 % load pressureSensor output table 
-readtable(data,'C:\Users\username\git\wearable-bioinstrumentation\data\pressureSensorData.csv')
+data = readtable('C:\Users\username\git\wearable-bioinstrumentation\data\pressureSensorData.csv');
 
 % remove portions of the data when you were not lying on the sensor (when pressed was false)
 time = data.time(logical(data.pressed));
