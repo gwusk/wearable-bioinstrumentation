@@ -5,7 +5,11 @@ close all
 % connect arduino
 a = arduino();
 
-% call pressureSensor function
+% define variables and call pressureSensor function
+sampleTime = 0;
+thresh = 0;
+livePlot = false;
+pauseTime = 0;
 [data] = pressureSensor(a,sampleTime,thresh,livePlot,pauseTime);
 
 % save pressureSensor output table to a csv in your data folder
