@@ -8,14 +8,14 @@ library(tidyverse)
 library(magrittr)
 
 # load data
-data <- read.csv('C:/filename.csv') # data should be 140 obss x 4 variables
+data <- read.csv('C:/filename.csv') # data should be 200 obss x 4 variables
 data$participant <- factor(data$participant) # make participant variable a factor
 table(data$participant) # should be 10 repeats per participant
 
 
 # LINE PLOT ----
 # reshape the data into long format so that there are 4 columns: participant, time, feature (rr or rr_fft), and value
-data_long <- data %>% gather() # data_long should be 280 obs. x 4 variables
+data_long <- data %>% gather() # data_long should be 400 obs. x 4 variables
 
 # line plot
 ggplot(data_long, aes()) +
@@ -23,7 +23,7 @@ ggplot(data_long, aes()) +
 
 # BAR PLOT ----
 # find the mean and standard deviation within each participant-feature
-summary <- data_long %>% group_by() %>% summarize() # summary should be  28 obs. x 4 variables
+summary <- data_long %>% group_by() %>% summarize() # summary should be  40 obs. x 4 variables
 
 # bar plot
 ggplot(summary, aes()) +
