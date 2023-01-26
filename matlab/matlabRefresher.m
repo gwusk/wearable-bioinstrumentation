@@ -16,6 +16,7 @@ addpath('C:\Users\folderName') % add specified folder(s) to the top fo the searc
 % Ctrl-C to cancel
 
 % test
+% test 2
 
 %% array
 schools = {'VT','UVA','CNU','ODU'}; % cell 
