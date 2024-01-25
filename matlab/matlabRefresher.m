@@ -1,4 +1,5 @@
 %% MATLAB Tips, Tricks, and Tools
+% welcome wearables class of 2024
 
 clc % clears text from Command Window
 clear % removes all variables from the current Workspace
