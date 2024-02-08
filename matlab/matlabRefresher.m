@@ -1,6 +1,4 @@
 %% MATLAB Tips, Tricks, and Tools
-% welcome wearables class of 2024
-% welcome to the matlab refresher
 
 clc % clears text from Command Window
 clear % removes all variables from the current Workspace
@@ -39,7 +37,7 @@ data = randi([0 100],length(schools),length(degrees));
 
 %%
 % logical indexing
-ind = data < 20;
+ind = data < 30;
 data(ind) = nan;
 
 %% array to table
@@ -55,6 +53,7 @@ VTengineers = data.VT(1) % error
 data2 = table();
 data2.year{1} = data;
 data2.year{2} = randi([0 100],length(schools),length(degrees));
+data2.year{3} = 5;
 
 
 %% structure
@@ -75,16 +74,22 @@ close all
 set(0,'DefaultFigureWindowStyle','docked') % docks rather than creating a separate window
 samePlot = true;
 subPlot = true;
+c = 'lessPoints'; % vs morePoints
 
 % hold on
 if samePlot
-    x = 1:100; % compare to x = 1:.01:100
+    switch c 
+        case 'lessPoints'
+            x = 1:100; 
+        case 'morePoints'
+            x = 1:.01:100;
+    end
     y = sin(x);
     y2 = cos(x);
     figure(1)
-    plot(x,y) % sin
+    plot(x,y,'-.') % sin
     hold on
-    plot(x,y2) % cos
+    plot(x,y2,'-*') % cos
     hold off
     % same as plot(x,y,x,y2)
 end
