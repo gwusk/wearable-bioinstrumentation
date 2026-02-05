@@ -17,6 +17,7 @@ addpath('C:\Users\folderName') % add specified folder(s) to the top fo the searc
 
 % test
 % test 2
+% Class of 2026
 
 %% array
 schools = {'VT','UVA','CNU','ODU'}; % cell 
@@ -68,13 +69,14 @@ for i = 1:length(schools)
 end
 
 VTengineers = data.VT.engineering
+VTengineers = data.engineering.VT % error
 
 %% plotting
 close all
 set(0,'DefaultFigureWindowStyle','docked') % docks rather than creating a separate window
 samePlot = true;
 subPlot = true;
-c = 'lessPoints'; % vs morePoints
+c = 'morePoints'; % vs morePoints
 
 % hold on
 if samePlot
